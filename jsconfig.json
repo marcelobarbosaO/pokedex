@@ -9,7 +9,8 @@
       "@scenes": ["src/scenes/*"],
       "@services": ["src/services/*"],
       "@store": ["src/store/*"],
-      "@theme": ["src/theme/*"],
+      "@theme": ["src/theme"],
+      "@theme/*": ["src/theme/*"],
       "@utils": ["src/utils/*"],
     }
   },

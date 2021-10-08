@@ -8,11 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* pokedexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* pokedexTests.m */; };
+		0A97EF68C1E4499F8ADA2C66 /* Spartan-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51E95AED37C0454C8E3C70DA /* Spartan-Light.ttf */; };
+		1202CE89C77443D4BF0A92CC /* Spartan-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7650E22EF00D4A5F8FCED1A3 /* Spartan-ExtraBold.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		433913C908414AD0B8FC6BCD /* Spartan-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B47BB954FA80438F82B093DF /* Spartan-ExtraLight.ttf */; };
+		48400871FB204C44A5930C81 /* Spartan-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D95A34304AD1438A970E3990 /* Spartan-Regular.ttf */; };
 		596D003EDD8FB1A21A5F664F /* libPods-pokedex.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1D2B92FAE7D234C552B6E7 /* libPods-pokedex.a */; };
+		5B463CB0A09D4A419EEA0FBA /* Spartan-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F06783AE1644BFF87B10023 /* Spartan-Thin.ttf */; };
+		7680B7EE234748249B903941 /* Spartan-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D478137F19B4D92BE03DEE8 /* Spartan-SemiBold.ttf */; };
+		812E33C1E1FC41A6800B7248 /* Spartan-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A6CF52ED0784DFE9AC43E5E /* Spartan-Black.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		961F1A54A8024D42A6E4F397 /* Spartan-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 052B95C929FB46E89833FC59 /* Spartan-Medium.ttf */; };
+		BB7CFB0630C24BB8A02D920D /* Spartan-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1D936CCB63E4EF181BBEA2D /* Spartan-Bold.ttf */; };
 		BEB48B8D6634AA880CE473C6 /* libPods-pokedex-pokedexTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EB56B4CA76FC7FB51BE7B1 /* libPods-pokedex-pokedexTests.a */; };
 /* End PBXBuildFile section */
 
@@ -30,18 +39,27 @@
 		00E356EE1AD99517003FC87E /* pokedexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pokedexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* pokedexTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = pokedexTests.m; sourceTree = "<group>"; };
+		052B95C929FB46E89833FC59 /* Spartan-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Spartan-Medium.ttf"; path = "../assets/fonts/Spartan-Medium.ttf"; sourceTree = "<group>"; };
+		0F06783AE1644BFF87B10023 /* Spartan-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Spartan-Thin.ttf"; path = "../assets/fonts/Spartan-Thin.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = pokedex/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = pokedex/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = pokedex/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = pokedex/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = pokedex/main.m; sourceTree = "<group>"; };
+		1A6CF52ED0784DFE9AC43E5E /* Spartan-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Spartan-Black.ttf"; path = "../assets/fonts/Spartan-Black.ttf"; sourceTree = "<group>"; };
 		3C6FB2849F254B7BA81ACBA1 /* Pods-pokedex-pokedexTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokedex-pokedexTests.release.xcconfig"; path = "Target Support Files/Pods-pokedex-pokedexTests/Pods-pokedex-pokedexTests.release.xcconfig"; sourceTree = "<group>"; };
 		4C1D2B92FAE7D234C552B6E7 /* libPods-pokedex.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-pokedex.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D478137F19B4D92BE03DEE8 /* Spartan-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Spartan-SemiBold.ttf"; path = "../assets/fonts/Spartan-SemiBold.ttf"; sourceTree = "<group>"; };
+		51E95AED37C0454C8E3C70DA /* Spartan-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Spartan-Light.ttf"; path = "../assets/fonts/Spartan-Light.ttf"; sourceTree = "<group>"; };
 		607AB6EC666F529C90A644A2 /* Pods-pokedex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokedex.release.xcconfig"; path = "Target Support Files/Pods-pokedex/Pods-pokedex.release.xcconfig"; sourceTree = "<group>"; };
+		7650E22EF00D4A5F8FCED1A3 /* Spartan-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Spartan-ExtraBold.ttf"; path = "../assets/fonts/Spartan-ExtraBold.ttf"; sourceTree = "<group>"; };
 		7E735F1545FAC363A9C73351 /* Pods-pokedex-pokedexTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokedex-pokedexTests.debug.xcconfig"; path = "Target Support Files/Pods-pokedex-pokedexTests/Pods-pokedex-pokedexTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = pokedex/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6EB56B4CA76FC7FB51BE7B1 /* libPods-pokedex-pokedexTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-pokedex-pokedexTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1D936CCB63E4EF181BBEA2D /* Spartan-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Spartan-Bold.ttf"; path = "../assets/fonts/Spartan-Bold.ttf"; sourceTree = "<group>"; };
+		B47BB954FA80438F82B093DF /* Spartan-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Spartan-ExtraLight.ttf"; path = "../assets/fonts/Spartan-ExtraLight.ttf"; sourceTree = "<group>"; };
+		D95A34304AD1438A970E3990 /* Spartan-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Spartan-Regular.ttf"; path = "../assets/fonts/Spartan-Regular.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		EF6460B581C4BDD8957CE510 /* Pods-pokedex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pokedex.debug.xcconfig"; path = "Target Support Files/Pods-pokedex/Pods-pokedex.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,7 +122,6 @@
 				7E735F1545FAC363A9C73351 /* Pods-pokedex-pokedexTests.debug.xcconfig */,
 				3C6FB2849F254B7BA81ACBA1 /* Pods-pokedex-pokedexTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -134,6 +151,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				1C326EEDD6D6CC281320A053 /* Pods */,
+				DDF4F46E163E4A27B8BBEEF2 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +165,22 @@
 				00E356EE1AD99517003FC87E /* pokedexTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		DDF4F46E163E4A27B8BBEEF2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1A6CF52ED0784DFE9AC43E5E /* Spartan-Black.ttf */,
+				B1D936CCB63E4EF181BBEA2D /* Spartan-Bold.ttf */,
+				7650E22EF00D4A5F8FCED1A3 /* Spartan-ExtraBold.ttf */,
+				B47BB954FA80438F82B093DF /* Spartan-ExtraLight.ttf */,
+				51E95AED37C0454C8E3C70DA /* Spartan-Light.ttf */,
+				052B95C929FB46E89833FC59 /* Spartan-Medium.ttf */,
+				D95A34304AD1438A970E3990 /* Spartan-Regular.ttf */,
+				4D478137F19B4D92BE03DEE8 /* Spartan-SemiBold.ttf */,
+				0F06783AE1644BFF87B10023 /* Spartan-Thin.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +279,15 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				812E33C1E1FC41A6800B7248 /* Spartan-Black.ttf in Resources */,
+				BB7CFB0630C24BB8A02D920D /* Spartan-Bold.ttf in Resources */,
+				1202CE89C77443D4BF0A92CC /* Spartan-ExtraBold.ttf in Resources */,
+				433913C908414AD0B8FC6BCD /* Spartan-ExtraLight.ttf in Resources */,
+				0A97EF68C1E4499F8ADA2C66 /* Spartan-Light.ttf in Resources */,
+				961F1A54A8024D42A6E4F397 /* Spartan-Medium.ttf in Resources */,
+				48400871FB204C44A5930C81 /* Spartan-Regular.ttf in Resources */,
+				7680B7EE234748249B903941 /* Spartan-SemiBold.ttf in Resources */,
+				5B463CB0A09D4A419EEA0FBA /* Spartan-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,7 +539,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.creativebit.pokedex;
 				PRODUCT_NAME = pokedex;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -521,7 +564,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.creativebit.pokedex;
 				PRODUCT_NAME = pokedex;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
