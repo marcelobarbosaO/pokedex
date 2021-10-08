@@ -1,0 +1,97 @@
+module.exports = {
+  root: true,
+  env: {
+    es2021: true,
+  },
+  parser: '@typescript-eslint/parser',
+  extends: ['@react-native-community', 'airbnb', "airbnb/hooks", 'airbnb-typescript'],
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 12,
+    sourceType: 'module',
+    tsconfigRootDir: './',
+    project: './tsconfig.json',
+  },
+  plugins: [
+    '@typescript-eslint',
+    'react',
+    'jsx-a11y',
+    'import',
+  ],
+  ignorePatterns: [
+    'node_modules/',
+    'e2e',
+    '__mocks__',
+    'coverage',
+    '_templates',
+    'babel.config.js',
+    '.eslintrc.js'
+  ],
+  rules: {
+    '@typescript-eslint/ban-ts-comment': 'off',
+    'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx'] }],
+    'react/prop-types': 0,
+    'react/display-name': 0,
+    '@typescript-eslint/member-delimiter-style': 0,
+    '@typescript-eslint/no-empty-function': 0,
+    '@typescript-eslint/no-explicit-any': 0,
+    'import/prefer-default-export': 0,
+    'import/no-named-as-default': 0,
+    'import/no-unresolved': 0,
+    'import/no-extraneous-dependencies': 0,
+    'import/extensions': 0,
+    'import/order': [
+      'error',
+      {
+        pathGroups: [
+          {
+            pattern: 'react',
+            group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: '~/**',
+            group: 'parent',
+            position: 'before',
+          },
+          {
+            pattern: '@*/**',
+            group: 'external',
+            position: 'after',
+          },
+        ],
+        pathGroupsExcludedImportTypes: ['react'],
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+      },
+    ],
+    'jsx-a11y/no-noninteractive-element-interactions': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/no-autofocus': 'off',
+    'react/state-in-constructor': 'off',
+    'react/no-unescaped-entities': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-non-null-assertion': 0,
+    'no-nested-ternary': 0,
+    'consistent-return': 0,
+    'array-callback-return': 0,
+    'react/jsx-props-no-spreading': 0,
+    'react/jsx-closing-bracket-location': 0,
+    'no-duplicate-imports': 'error',
+    'object-curly-newline': 0,
+    'operator-linebreak': 0,
+    'arrow-parens': 0,
+    'no-confusing-arrow': 0,
+    'implicit-arrow-linebreak': 0,
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+};
