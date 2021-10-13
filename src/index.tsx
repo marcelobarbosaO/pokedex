@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import { Provider as PaperProvider, Title } from 'react-native-paper';
 
 import theme from '@theme/index';
+import '@utils/reactotron';
 
 const App = (): JSX.Element => (
   <PaperProvider theme={theme}>
