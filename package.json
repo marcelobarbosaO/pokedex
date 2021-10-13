@@ -6,7 +6,7 @@
     "android": "npx solidarity && npx react-native run-android",
     "ios": "npx solidarity && npx react-native run-ios",
     "start": "npx solidarity && npx react-native start",
-    "test": "jest",
+    "test": "jest --no-cache --passWithNoTests",
     "precommit": "yarn pretty && yarn lint",
     "prepush": "npx tsc && lint-staged",
     "pretty": "prettier --config ./.prettierrc.js --write \"src/**/*.{js,jsx,ts,tsx,json}\"",
@@ -46,6 +46,8 @@
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
     "@react-native-community/eslint-config": "^2.0.0",
+    "@testing-library/jest-native": "^4.0.2",
+    "@testing-library/react-native": "^7.2.0",
     "@types/jest": "^27.0.2",
     "@types/react": "^17.0.27",
     "@types/react-native": "^0.65.5",
@@ -87,6 +89,36 @@
   },
   "jest": {
     "preset": "react-native",
+    "setupFiles": [
+      "<rootDir>/jest.setup.js"
+    ],
+    "setupFilesAfterEnv": [
+      "./jest.setup.js"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "<rootDir>"
+    ],
+    "collectCoverage": false,
+    "coverageReporters": [
+      "json",
+      "html"
+    ],
+    "moduleNameMapper": {
+      "\\.(pdf|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "@assets(.*)$": "<rootDir>/app/assets$1",
+      "@components(.*)$": "<rootDir>/app/components$1",
+      "@services(.*)$": "<rootDir>/app/services$1",
+      "@scenes(.*)$": "<rootDir>/app/scenes$1",
+      "@store(.*)$": "<rootDir>/app/store$1",
+      "@theme(.*)$": "<rootDir>/app/theme$1",
+      "@utils(.*)$": "<rootDir>/app/utils$1"
+    },
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/assets/**",
+      "!src/store/**"
+    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",

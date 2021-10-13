@@ -10,8 +10,10 @@ declare global {
 
 if (__DEV__) {
   const { scriptURL } = NativeModules.SourceCode;
-  const scriptHostname = scriptURL.split('://')[1].split(':')[0];
-  const tron = Reactotron.configure({ host: scriptHostname }).useReactNative().connect();
+  const scriptHostname = scriptURL?.split('://')[1].split(':')[0];
+  const tron = Reactotron.configure({ host: scriptHostname || 'localhost' })
+    .useReactNative()
+    .connect();
 
   console.tron = tron;
 }

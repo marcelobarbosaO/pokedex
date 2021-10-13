@@ -24,9 +24,13 @@ module.exports = {
     'node_modules/',
     'e2e',
     '__mocks__',
+    '__tests__',
     'coverage',
     '_templates',
     'babel.config.js',
+    'jest.config.js',
+    'jest.setup.js',
+    'react-native.config.js',
     '.eslintrc.js'
   ],
   rules: {
