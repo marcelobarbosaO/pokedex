@@ -55,7 +55,7 @@ const fontConfig = {
       fontFamily: 'Spartan-Thin',
       fontWeight: 'normal',
     },
-  }
+  },
 };
 
 const theme = {
@@ -71,7 +71,7 @@ const theme = {
     placeholder: '#ccc',
     backdrop: '#ccc',
     onSurface: '#ccc',
-    notification: '#ccc'
+    notification: '#ccc',
   },
   fonts: configureFonts(fontConfig),
 };
