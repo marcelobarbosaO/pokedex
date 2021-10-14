@@ -1,12 +1,16 @@
 import React from 'react';
 import App from '../src';
+import { Provider } from 'react-redux';
+import { defaultStore as store } from '../src/store';
 
 import { render } from '@testing-library/react-native';
 
-it('renders correctly', () => {
-  const { getByText } = render(<App />);
+it('renders correctly', async () => {
+  const { getByTestId } = render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+  );
 
-  console.log(getByText('Bem-vindo'));
-
-  expect(getByText('Bem-vindo')).not.toBeNull()
+  expect(getByTestId('title')).not.toBeNull();
 });
