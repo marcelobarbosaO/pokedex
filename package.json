@@ -5,7 +5,7 @@
   "scripts": {
     "android": "npx solidarity && npx react-native run-android",
     "ios": "npx solidarity && npx react-native run-ios",
-    "start": "npx solidarity && npx react-native start",
+    "start": "npx solidarity && npx react-native start --reset-cache",
     "test": "jest --no-cache --passWithNoTests",
     "precommit": "yarn pretty && yarn lint",
     "prepush": "npx tsc && lint-staged",
