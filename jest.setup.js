@@ -41,6 +41,8 @@ jest.mock("react-native-gesture-handler", () => {
   };
 });
 
+jest.mock("axios");
+
 jest.fn();
 jest.spyOn(reactRedux, "useDispatch");
 jest.spyOn(reactRedux, "useSelector");

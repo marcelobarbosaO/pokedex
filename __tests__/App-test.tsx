@@ -1,6 +1,7 @@
 import React from 'react';
 import App from '../src';
 import * as redux from 'react-redux';
+import axios from "axios";
 import { defaultStore as store } from '../src/store';
 
 import { render } from '@testing-library/react-native';
@@ -16,10 +17,13 @@ const userMock = {
 };
 
 describe('Test auth user redirect', () => {
+
   it('should be logged user', async () => {
     store.getState = () => userMock;
 
     jest.spyOn(redux, 'useSelector').mockReturnValue(userMock);
+
+    axios.get = jest.fn().mockImplementation(() => Promise.resolve({ data: {}, loading: false }));
 
     const { getByTestId, getAllByText } = render(
       <redux.Provider store={store}>
@@ -28,7 +32,7 @@ describe('Test auth user redirect', () => {
     );
 
     expect(getByTestId('viewhome')).not.toBeNull();
-    expect(getAllByText('Home')).toHaveLength(1);
+    expect(getAllByText('HOME')).toHaveLength(1);
   });
 
   it('should be guest user', async () => {
