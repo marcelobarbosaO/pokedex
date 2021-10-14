@@ -1,16 +1,49 @@
 import React from 'react';
 import App from '../src';
-import { Provider } from 'react-redux';
+import * as redux from 'react-redux';
 import { defaultStore as store } from '../src/store';
 
 import { render } from '@testing-library/react-native';
 
-it('renders correctly', async () => {
-  const { getByTestId } = render(
-    <Provider store={store}>
-      <App />
-    </Provider>,
-  );
+const userMock = {
+  user: {
+    id: 123,
+  },
+  isLoading: false,
+  error: null,
+  token: '123',
+  sendedRecoverPassword: false,
+};
 
-  expect(getByTestId('title')).not.toBeNull();
+describe('Test auth user redirect', () => {
+  it('should be logged user', async () => {
+    store.getState = () => userMock;
+
+    jest.spyOn(redux, 'useSelector').mockReturnValue(userMock);
+
+    const { getByTestId, getAllByText } = render(
+      <redux.Provider store={store}>
+        <App />
+      </redux.Provider>,
+    );
+
+    expect(getByTestId('viewhome')).not.toBeNull();
+    expect(getAllByText('Home')).toHaveLength(1);
+  });
+
+  it('should be guest user', async () => {
+    const offUser = { ...userMock, user: null, token: null };
+
+    store.getState = () => offUser;
+    jest.spyOn(redux, 'useSelector').mockReturnValue(offUser);
+
+    const { getByTestId, getAllByText } = render(
+      <redux.Provider store={store}>
+        <App />
+      </redux.Provider>,
+    );
+
+    expect(getByTestId('viewsignin')).not.toBeNull();
+    expect(getAllByText('SignIn')).toHaveLength(1);
+  });
 });
