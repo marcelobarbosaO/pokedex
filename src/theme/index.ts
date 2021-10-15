@@ -64,16 +64,21 @@ const theme = {
     ...DefaultTheme.colors,
     primary: '#2E6EB5',
     accent: '##D8D8D8',
-    background: '#CCC',
+    background: '#fff',
     surface: '#ccc',
-    text: '#ccc',
+    text: '#000',
     disabled: '#ccc',
-    placeholder: '#ccc',
+    placeholder: 'rgba(0,0,0,.54)',
     backdrop: '#ccc',
     onSurface: '#ccc',
-    notification: '#ccc',
+    notification: '#f00',
   },
   fonts: configureFonts(fontConfig),
+  sizes: {
+    border: 6,
+    margin: 10,
+    padding: 20,
+  },
 };
 
 export default theme;
