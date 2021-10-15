@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const apiAuth = axios.create({
-  baseURL: 'https://api.b4you.com.br/sandbox/v1/',
+  baseURL: 'https://reqres.in/api/',
 });
 
 export const apiPok = axios.create({
