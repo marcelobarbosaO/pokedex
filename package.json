@@ -27,6 +27,7 @@
     "react-native-paper": "^4.9.2",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.8.0",
+    "react-native-size-matters": "^0.4.0",
     "react-native-vector-icons": "^8.1.0",
     "react-redux": "^7.2.5",
     "redux": "^4.1.1",
@@ -56,6 +57,7 @@
     "@types/redux-persist": "^4.3.1",
     "@types/redux-saga": "^0.10.5",
     "@types/styled-components": "^5.1.15",
+    "@types/styled-components-react-native": "^5.1.1",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/eslint-plugin-tslint": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
@@ -105,6 +107,7 @@
     ],
     "moduleNameMapper": {
       "\\.(pdf|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "^styled-components$": "<rootDir>/node_modules/styled-components",
       "@assets(.*)$": "<rootDir>/app/assets$1",
       "@components(.*)$": "<rootDir>/app/components$1",
       "@services(.*)$": "<rootDir>/app/services$1",

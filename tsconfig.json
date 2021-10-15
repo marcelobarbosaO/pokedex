@@ -57,7 +57,7 @@
     "skipLibCheck": false,
   },
   "include": ["src/**/*"],
-  "types": ["src/utils/types/*"],
+  "types": ["src/utils/types/*", "jest", "styled-components-react-native"],
   "exclude": [
     "node_modules",
     "babel.config.js",
