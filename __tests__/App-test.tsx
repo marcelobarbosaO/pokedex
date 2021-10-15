@@ -1,10 +1,14 @@
 import React from 'react';
 import App from '../src';
 import * as redux from 'react-redux';
-import axios from "axios";
+import { Provider as PaperProvider } from 'react-native-paper';
+import axios from 'axios';
 import { defaultStore as store } from '../src/store';
+import theme from '../src/theme';
+import 'jest-styled-components';
 
-import { render } from '@testing-library/react-native';
+import { render, cleanup } from '@testing-library/react-native';
+import { ThemeProvider } from 'styled-components/native';
 
 const userMock = {
   user: {
@@ -16,8 +20,9 @@ const userMock = {
   sendedRecoverPassword: false,
 };
 
-describe('Test auth user redirect', () => {
+afterEach(cleanup);
 
+describe('Test auth user redirect', () => {
   it('should be logged user', async () => {
     store.getState = () => userMock;
 
@@ -27,7 +32,11 @@ describe('Test auth user redirect', () => {
 
     const { getByTestId, getAllByText } = render(
       <redux.Provider store={store}>
-        <App />
+        <PaperProvider theme={theme}>
+          <ThemeProvider theme={theme}>
+            <App />
+          </ThemeProvider>
+        </PaperProvider>
       </redux.Provider>,
     );
 
@@ -43,11 +52,14 @@ describe('Test auth user redirect', () => {
 
     const { getByTestId, getAllByText } = render(
       <redux.Provider store={store}>
-        <App />
+        <ThemeProvider theme={theme}>
+          <App />
+        </ThemeProvider>
       </redux.Provider>,
     );
 
     expect(getByTestId('viewsignin')).not.toBeNull();
-    expect(getAllByText('SignIn')).toHaveLength(1);
+    expect(getByTestId('button-submit')).not.toBeNull();
+    expect(getAllByText('Bem-vindo')).toHaveLength(1);
   });
 });
