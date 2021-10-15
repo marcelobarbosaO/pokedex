@@ -20,23 +20,23 @@ export const Logo = styled.Image`
 `;
 
 export const Content = styled.View`
-  background: ${props => props.theme.colors.background};
-  padding: ${props => props.theme.sizes.padding}px;
-  border-radius: ${props => props.theme.sizes.border}px;
+  background: ${({ theme }) => theme.colors.background};
+  padding: ${({ theme }) => theme.sizes.padding}px;
+  border-radius: ${({ theme }) => theme.sizes.border}px;
 `;
 
 export const Title = styled(TitleRP)`
-  color: ${props => props.theme.colors.text};
+  color: ${({ theme }) => theme.colors.text};
   font-weight: 600;
   font-size: ${moderateScale(20)}px;
 `;
 
 export const SubTitle = styled(TitleRP)`
-  color: ${props => props.theme.colors.text};
+  color: ${({ theme }) => theme.colors.text};
   font-weight: 300;
   font-size: ${moderateScale(15)}px;
 `;
 
 export const ErrorText = styled.Text`
-  color: ${props => props.theme.colors.notification};
+  color: ${({ theme }) => theme.colors.notification};
 `;
