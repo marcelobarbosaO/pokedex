@@ -5,7 +5,6 @@ const INITIAL_STATE: UserState = {
   user: null,
   token: null,
   error: null,
-  sendedRecoverPassword: false,
   isLoading: false,
 };
 
@@ -32,15 +31,6 @@ const userSlice = createSlice({
         user,
       };
     },
-    recoverPasswordRequest(state, _action) {
-      return { ...state, isLoading: true, sendedRecoverPassword: false };
-    },
-    recoverPasswordSuccess(state) {
-      return { ...state, isLoading: false, sendedRecoverPassword: true };
-    },
-    clearResetPassword(state) {
-      return { ...state, sendedRecoverPassword: false };
-    },
     errorResponse(state, action) {
       return {
         ...state,
@@ -58,9 +48,6 @@ const userSlice = createSlice({
 export const {
   signInRequest,
   signInSuccess,
-  recoverPasswordRequest,
-  recoverPasswordSuccess,
-  clearResetPassword,
   logoutRequest,
   logoutSuccess,
   saveToken,
