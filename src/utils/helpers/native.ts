@@ -1,7 +1,6 @@
 import { Dimensions, Alert, Platform } from 'react-native';
 
 type AlertProps = {
-  title: string;
   msg: string;
 };
 
@@ -11,4 +10,4 @@ export const isAndroid = (): boolean => Platform.OS === 'android';
 
 export const { width: widthScreen, height: heightScreen } = Dimensions.get('window');
 
-export const showAlert = ({ title, msg }: AlertProps) => Alert.alert(title, msg);
+export const showAlert = ({ msg }: AlertProps) => Alert.alert('Pokedex', msg);

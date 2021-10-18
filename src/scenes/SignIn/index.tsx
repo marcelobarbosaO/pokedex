@@ -33,7 +33,6 @@ const SignIn = (): JSX.Element => {
   useEffect(() => {
     if (!isLoading && error) {
       showAlert({
-        title: 'Pokedex',
         msg: error?.error || 'Houve um erro',
       });
 
