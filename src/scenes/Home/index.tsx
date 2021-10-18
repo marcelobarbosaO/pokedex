@@ -1,8 +1,9 @@
 import React from 'react';
+// import Drawer from 'react-native-drawer';
 
 import InputSearch from '@components/InputSearch';
 import Loading from '@components/Loading';
-import { usePokemons } from '@utils/hooks/usePokemon';
+import { useList } from '@utils/hooks/usePokemon';
 import CardPokemon from './components/CardPokemon';
 import Tag from './components/Tag';
 
@@ -20,8 +21,13 @@ import {
 
 const logo = require('@assets/logo.png');
 
-const Home = (): JSX.Element => {
-  const { response, loading } = usePokemons({});
+const Home = (props): JSX.Element => {
+  const { navigation } = props;
+  const { response, loading } = useList({ entity: 'pokemon' });
+
+  const toggleMenu = () => {
+    navigation.openDrawer();
+  };
 
   if (loading) return <Loading />;
 
@@ -34,7 +40,7 @@ const Home = (): JSX.Element => {
           <InputContainer>
             <InputSearch placeholder="Buscar Pokémon" underlineColor="#FFF" />
           </InputContainer>
-          <ButtonIcon onPress={() => false}>
+          <ButtonIcon onPress={() => toggleMenu()}>
             <Icon name="options-outline" size={30} />
           </ButtonIcon>
         </Row>

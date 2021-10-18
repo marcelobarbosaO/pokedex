@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { moderateScale } from '@utils/helpers';
 
 type ViewProps = {
   vertical?: number | undefined;
@@ -6,6 +7,6 @@ type ViewProps = {
 };
 
 export const Space = styled.View`
-  margin-vertical: ${({ vertical }: ViewProps) => vertical || '0'}px;
-  margin-horizontal: ${({ horizontal }: ViewProps) => horizontal || '0'}px;
+  margin-vertical: ${({ vertical }: ViewProps) => moderateScale(vertical || 0) || '0'}px;
+  margin-horizontal: ${({ horizontal }: ViewProps) => moderateScale(horizontal || 0) || '0'}px;
 `;

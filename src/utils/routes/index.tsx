@@ -1,19 +1,30 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+import FilterSideMenu from '@components/FilterSideMenu';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import HomeScreen from '@scenes/Home';
 import SignInScreen from '@scenes/SignIn';
 
-const HomeStack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
 const SignStack = createNativeStackNavigator();
 
 const HomeStackScreen = () => (
-  <HomeStack.Navigator screenOptions={{ headerShown: false }}>
-    <HomeStack.Screen name="Home" component={HomeScreen} />
+  <Drawer.Navigator
+    screenOptions={{
+      headerShown: false,
+      drawerPosition: 'right',
+      drawerType: 'front',
+      drawerStyle: {
+        width: '85%',
+      },
+    }}
+    drawerContent={() => <FilterSideMenu />}>
+    <Drawer.Screen name="Home" component={HomeScreen} />
     {/* <HomeStack.Screen name="SaleDetail" component={SaleDetailScreen} /> */}
-  </HomeStack.Navigator>
+  </Drawer.Navigator>
 );
 
 const AuthStackScreen = () => (
