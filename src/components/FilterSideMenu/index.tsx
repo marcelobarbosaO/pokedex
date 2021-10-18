@@ -28,7 +28,7 @@ const FilterSideMenu = (): JSX.Element => {
 
     if (!response) return <SubTitle>Nada encontrado</SubTitle>;
 
-    const data = [{ name: 'todos' }, ...response.results];
+    const data: NameUrl[] = [{ name: 'all', url: '' }, ...response.results];
 
     return (
       <>
