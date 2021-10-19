@@ -169,8 +169,6 @@ const Home = (props): JSX.Element => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (loading) return <Loading />;
-
   return (
     <Container testID="viewhome">
       <Content>
@@ -195,7 +193,9 @@ const Home = (props): JSX.Element => {
             filters.map(filter => <Tag text={filter} key={`tag-${filter}`} filters={filters} />)}
         </ListFilter>
 
-        {filteredPokemons && (
+        {loading && <Loading />}
+
+        {!loading && filteredPokemons && (
           <ListPokemons
             data={filteredPokemons}
             keyExtractor={(item: any) => `${item.name}`}
