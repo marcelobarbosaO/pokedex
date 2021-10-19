@@ -30,8 +30,6 @@ const Evolution = ({ pokemon }: Props) => {
 
   const [evolvesPokemon, setEvolvesPokemon] = useState<PokemonEvolvesProps[]>([]);
 
-  // Criando uma função recursiva para navegar na árvore de evolução do pokémon
-  // A cada chamada é extraído o nome da espécie e concatenado com a lista dos nomes.
   const handleNameSpecies = useCallback(
     ({ species, evolves_to, evolution_details }: EvolvesProps): PokemonEvolvesProps[] => {
       let namesPokemons: PokemonEvolvesProps[] = [
@@ -55,7 +53,6 @@ const Evolution = ({ pokemon }: Props) => {
   );
 
   useEffect(() => {
-    // Na rota /pokemon-species é retornado os atributos da espécie do Pokémon
     apiPok.get(`/pokemon-species/${name}`).then((responseSpecies: any) => {
       const url = responseSpecies.data.evolution_chain.url.split('v2').pop();
 
