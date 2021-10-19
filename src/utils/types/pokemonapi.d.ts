@@ -88,10 +88,7 @@ declare interface Pokemon {
   weight: number;
 }
 
-declare interface PokemonProps {
-  id: number;
-  name: string;
+declare interface PokemonProps extends Pokemon {
   image: string;
   backgroundColor: string;
-  types: TypePokemon[];
 }

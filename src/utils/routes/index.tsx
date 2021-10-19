@@ -6,6 +6,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import HomeScreen from '@scenes/Home';
+import PokemonDetailScreen from '@scenes/PokemonDetail';
 import SignInScreen from '@scenes/SignIn';
 
 const Drawer = createDrawerNavigator();
@@ -23,6 +24,7 @@ const HomeStackScreen = () => (
     }}
     drawerContent={() => <FilterSideMenu />}>
     <Drawer.Screen name="Home" component={HomeScreen} />
+    <Drawer.Screen name="PokemonDetail" component={PokemonDetailScreen} />
     {/* <HomeStack.Screen name="SaleDetail" component={SaleDetailScreen} /> */}
   </Drawer.Navigator>
 );

@@ -32,7 +32,7 @@ export const PokemonImage = styled.Image`
   height: ${moderateScale(120)}px;
   z-index: 2;
   position: absolute;
-  top: -30px;
+  top: -${moderateScale(30)}px;
   align-self: center;
 `;
 
@@ -42,7 +42,7 @@ export const PokemonNameView = styled.View`
   align-items: center;
   padding: 10px 0;
   margin-top: 100px;
-  border-radius: 15px;
+  border-radius: ${moderateScale(15)}px;
 `;
 
 export const PokemonName = styled(Text)`

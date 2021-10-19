@@ -14,6 +14,7 @@ declare module 'styled-components' {
       onSurface: string;
       notification: string;
       lightGray: string;
+      grayItems: string;
     };
     backgroundType: {
       bug: string;
