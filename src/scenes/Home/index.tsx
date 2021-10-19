@@ -45,7 +45,7 @@ const Home = (props): JSX.Element => {
     const { data } = await apiPok.get<Pokemon>(`/pokemon/${pokemonId}`);
 
     if (data) {
-      const { id, name, types, sprites } = data;
+      const { name, types, sprites } = data;
 
       let backgroundColor = types[0].type.name;
 
@@ -53,16 +53,13 @@ const Home = (props): JSX.Element => {
         backgroundColor = types[1].type.name;
       }
 
-      setAllPokemons(prevState => [
-        ...prevState,
-        {
-          id,
-          name,
-          image: sprites?.other['official-artwork']?.front_default || '',
-          backgroundColor,
-          types,
-        },
-      ]);
+      const newPokemon: PokemonProps = {
+        ...data,
+        image: sprites?.other['official-artwork']?.front_default || '',
+        backgroundColor,
+      };
+
+      setAllPokemons(prevState => [...prevState, newPokemon]);
 
       if (checkFilter) {
         if (searchText.length > 3 && !name.includes(searchText)) return;
@@ -73,28 +70,10 @@ const Home = (props): JSX.Element => {
           if (!existInFilter) return;
         }
 
-        return setFilteredPokemons(prevState => [
-          ...prevState,
-          {
-            id,
-            name,
-            image: sprites?.other['official-artwork']?.front_default || '',
-            backgroundColor,
-            types,
-          },
-        ]);
+        return setFilteredPokemons(prevState => [...prevState, newPokemon]);
       }
 
-      setFilteredPokemons(prevState => [
-        ...prevState,
-        {
-          id,
-          name,
-          image: sprites?.other['official-artwork']?.front_default || '',
-          backgroundColor,
-          types,
-        },
-      ]);
+      setFilteredPokemons(prevState => [...prevState, newPokemon]);
     }
   };
 
@@ -200,7 +179,9 @@ const Home = (props): JSX.Element => {
             data={filteredPokemons}
             keyExtractor={(item: any) => `${item.name}`}
             showsHorizontalScrollIndicator={false}
-            renderItem={({ item, index }) => <CardPokemon pokemon={item} index={index} />}
+            renderItem={({ item, index }) => (
+              <CardPokemon navigation={navigation} pokemon={item} index={index} />
+            )}
             numColumns={2}
             onEndReached={loadMoreItems}
             onEndReachedThreshold={0.05}

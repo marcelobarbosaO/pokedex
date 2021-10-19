@@ -71,8 +71,9 @@ const theme = {
     placeholder: 'rgba(0,0,0,.54)',
     backdrop: '#5E5D5D',
     onSurface: '#ccc',
-    notification: '#f00',
+    notification: '#FF1D1D',
     lightGray: 'rgba(0, 0, 0, 0.08)',
+    grayItems: '#9a9a9a',
   },
   backgroundType: {
     bug: '#8BD674',
