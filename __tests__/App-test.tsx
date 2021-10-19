@@ -30,7 +30,7 @@ describe('Test auth user redirect', () => {
 
     axios.get = jest.fn().mockImplementation(() => Promise.resolve({ data: {}, loading: false }));
 
-    const { getByTestId, getAllByText } = render(
+    const { getByTestId } = render(
       <redux.Provider store={store}>
         <PaperProvider theme={theme}>
           <ThemeProvider theme={theme}>
@@ -41,7 +41,8 @@ describe('Test auth user redirect', () => {
     );
 
     expect(getByTestId('viewhome')).not.toBeNull();
-    expect(getAllByText('HOME')).toHaveLength(1);
+    expect(getByTestId('boxSearch')).not.toBeNull();
+    expect(getByTestId('boxFilters')).not.toBeNull();
   });
 
   it('should be guest user', async () => {

@@ -1,4 +1,4 @@
-declare interface List {
+declare interface ListItems {
   count: number;
   next: string | null;
   previous: string | null;
@@ -9,7 +9,7 @@ declare type NameUrl = {
   url: string;
 };
 
-declare interface ListPokemons extends List {
+declare interface List extends ListItems {
   results: NameUrl[];
 }
 
@@ -86,4 +86,12 @@ declare interface Pokemon {
   stats: StatPokemon[];
   types: TypePokemon[];
   weight: number;
+}
+
+declare interface PokemonProps {
+  id: number;
+  name: string;
+  image: string;
+  backgroundColor: string;
+  types: TypePokemon[];
 }

@@ -28,7 +28,7 @@ function* signIn(action) {
     const response = yield call(login, email, password);
 
     if (response?.status === 200) {
-      const { token } = response.data.data;
+      const { token } = response.data;
 
       yield put(saveToken(token));
       const user = {
