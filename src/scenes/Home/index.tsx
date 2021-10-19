@@ -175,7 +175,7 @@ const Home = (props): JSX.Element => {
         <Logo source={logo} resizeMode="contain" />
 
         <Row>
-          <InputContainer>
+          <InputContainer testID="boxSearch">
             <InputSearch
               placeholder="Buscar Pokémon"
               underlineColor="#FFF"
@@ -188,7 +188,7 @@ const Home = (props): JSX.Element => {
           </ButtonIcon>
         </Row>
 
-        <ListFilter horizontal>
+        <ListFilter testID="boxFilters" horizontal>
           {filters &&
             filters.map(filter => <Tag text={filter} key={`tag-${filter}`} filters={filters} />)}
         </ListFilter>
