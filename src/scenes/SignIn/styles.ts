@@ -1,4 +1,4 @@
-import { Title as TitleRP } from 'react-native-paper';
+import { Title as TitleRP, HelperText } from 'react-native-paper';
 import styled from 'styled-components/native';
 
 import { moderateScale } from '@utils/helpers';
@@ -37,6 +37,6 @@ export const SubTitle = styled(TitleRP)`
   font-size: ${moderateScale(15)}px;
 `;
 
-export const ErrorText = styled.Text`
+export const ErrorText = styled(HelperText)`
   color: ${({ theme }) => theme.colors.notification};
 `;

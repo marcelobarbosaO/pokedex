@@ -84,7 +84,11 @@ const SignIn = (): JSX.Element => {
             name="email"
             defaultValue=""
           />
-          {errors.email && <ErrorText testID="email-error">{errors.email.message}</ErrorText>}
+          {errors.email && (
+            <ErrorText visible type="error" testID="email-error">
+              {errors.email.message}
+            </ErrorText>
+          )}
 
           <Spacing vertical={15} />
 
@@ -106,7 +110,9 @@ const SignIn = (): JSX.Element => {
             defaultValue=""
           />
           {errors.password && (
-            <ErrorText testID="password-error">{errors.password.message}</ErrorText>
+            <ErrorText visible type="error" testID="password-error">
+              {errors.password.message}
+            </ErrorText>
           )}
 
           <Spacing vertical={15} />
