@@ -87,7 +87,7 @@ const Evolution = ({ pokemon }: Props) => {
     <ContainerTab>
       {evolvesPokemon.length ? (
         evolvesPokemon.slice(0, 6).map((evolves, index) => (
-          <RowTab>
+          <RowTab key={`evolution-${evolves.number}`}>
             <Image source={{ uri: evolves.image }} />
             <Type>{evolves.name}</Type>
             {index !== 0 && <Value>{`Level: ${evolves.level}`}</Value>}
