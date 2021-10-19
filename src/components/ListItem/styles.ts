@@ -4,15 +4,15 @@ import { moderateScale } from '@utils/helpers';
 
 type ViewProps = {
   index: number;
-  active?: boolean;
+  isActive?: boolean;
 };
 
 type TextProps = {
-  active?: boolean;
+  isActive?: boolean;
 };
 
 export const Container = styled.TouchableOpacity<ViewProps>`
-  background: ${({ theme, active }) => (active ? theme.colors.primary : theme.colors.accent)};
+  background: ${({ theme, isActive }) => (isActive ? theme.colors.primary : theme.colors.accent)};
   border-radius: ${moderateScale(4)}px;
   margin-left: ${({ index }) => (index % 2 !== 0 ? moderateScale(15) : 0)}px;
   margin-bottom: ${moderateScale(12)}px;
@@ -24,7 +24,7 @@ export const Container = styled.TouchableOpacity<ViewProps>`
 `;
 
 export const PokemonType = styled(Text)<TextProps>`
-  color: ${({ theme, active }) => (active ? theme.colors.background : theme.colors.backdrop)};
+  color: ${({ theme, isActive }) => (isActive ? theme.colors.background : theme.colors.backdrop)};
   font-weight: normal;
   text-transform: capitalize;
 `;

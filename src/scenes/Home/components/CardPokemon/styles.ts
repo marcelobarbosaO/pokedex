@@ -7,7 +7,7 @@ type ViewProps = {
   index: number;
 };
 
-export const Container = styled.View<ViewProps>`
+export const Container = styled.TouchableOpacity<ViewProps>`
   border-radius: ${({ theme }) => theme.sizes.padding}px;
   padding: ${({ theme }) => theme.sizes.margin}px;
   margin-right: ${({ index }) => (index % 2 === 0 ? moderateScale(15) : 0)}px;

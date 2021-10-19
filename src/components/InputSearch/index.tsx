@@ -4,7 +4,7 @@ import { InputContainer, InputField } from './styles';
 
 const InputSearch = props => (
   <InputContainer>
-    <InputField {...props} autoCapitalize="none" />
+    <InputField {...props} autoCapitalize="none" autoCorrect={false} />
   </InputContainer>
 );
 

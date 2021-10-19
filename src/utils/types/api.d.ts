@@ -17,3 +17,7 @@ declare interface UserState {
   error: ApiResponse | null;
   isLoading: boolean;
 }
+
+declare interface AppState {
+  filters: string[];
+}

@@ -1,16 +1,36 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { updateFilters } from '@store/slices/App';
 
 import { Container, PokemonType } from './styles';
 
 type Props = {
   item: any;
   index: number;
+  allFiltersActive: string[];
 };
 
-const ListItem = ({ item, index }: Props): JSX.Element => (
-  <Container index={index} active={index === 1}>
-    <PokemonType active={index === 1}>{item.name || 'asasa'}</PokemonType>
-  </Container>
-);
+const ListItem = ({ item, index, allFiltersActive }: Props): JSX.Element => {
+  const isActive = allFiltersActive.includes(item.name);
+  const dispatch = useDispatch();
+
+  const updateFiltersList = (): void => {
+    if (item.name === 'all') {
+      dispatch(updateFilters(['all']));
+    } else {
+      const newFilters = allFiltersActive.filter(
+        filter => filter !== item.name && filter !== 'all',
+      );
+
+      dispatch(updateFilters([...newFilters, item.name]));
+    }
+  };
+
+  return (
+    <Container index={index} isActive={isActive} onPress={updateFiltersList}>
+      <PokemonType isActive={isActive}>{item.name || 'Pokemon sem nome'}</PokemonType>
+    </Container>
+  );
+};
 
 export default ListItem;
