@@ -1,11 +1,13 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import Button from '@components/Button';
 import ListItem from '@components/ListItem';
 import Loading from '@components/Loading';
 import Spacing from '@components/Spacing';
 import { useNavigation, DrawerActions } from '@react-navigation/native';
 import { updateFilters } from '@store/slices/App';
+import { logoutRequest } from '@store/slices/User';
 import { useList } from '@utils/hooks/usePokemon';
 
 import {
@@ -36,6 +38,8 @@ const FilterSideMenu = (): JSX.Element => {
 
     const clearFilters = () => dispatch(updateFilters(['all']));
 
+    const logout = () => dispatch(logoutRequest());
+
     return (
       <>
         <Row>
@@ -65,6 +69,10 @@ const FilterSideMenu = (): JSX.Element => {
           )}
           numColumns={2}
         />
+
+        <Spacing vertical={10} />
+
+        <Button onPress={logout}>Sair</Button>
       </>
     );
   };

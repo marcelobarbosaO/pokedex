@@ -1,11 +1,13 @@
 import React from 'react';
-import { ActivityIndicator } from 'react-native';
+import { ActivityIndicator } from 'react-native-paper';
+
+import theme from '@theme/index';
 
 import { Container } from './styles';
 
 const Loading = () => (
   <Container>
-    <ActivityIndicator color="#000" size="large" />
+    <ActivityIndicator animating color={theme.colors.primary} size="large" />
   </Container>
 );
 
