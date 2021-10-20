@@ -8,6 +8,7 @@ import Spacing from '@components/Spacing';
 import { useNavigation, DrawerActions } from '@react-navigation/native';
 import { updateFilters } from '@store/slices/App';
 import { logoutRequest } from '@store/slices/User';
+import { DEFAULT_FILTER } from '@utils/constants';
 import { useList } from '@utils/hooks/usePokemon';
 
 import {
@@ -29,14 +30,14 @@ const FilterSideMenu = (): JSX.Element => {
   const { filters } = useSelector((state: { app: AppState }) => state.app);
   const dispatch = useDispatch();
 
-  const renderContent = () => {
+  const renderContent = (): JSX.Element => {
     if (loading) return <Loading />;
 
     if (!response) return <SubTitle>Nada encontrado</SubTitle>;
 
-    const allPokemonTypes: NameUrl[] = [{ name: 'all', url: '' }, ...response.results];
+    const allPokemonTypes: NameUrl[] = [{ name: DEFAULT_FILTER, url: '' }, ...response.results];
 
-    const clearFilters = () => dispatch(updateFilters(['all']));
+    const clearFilters = () => dispatch(updateFilters([DEFAULT_FILTER]));
 
     const logout = () => dispatch(logoutRequest());
 

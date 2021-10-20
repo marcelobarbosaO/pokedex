@@ -1,6 +1,8 @@
 import React, { useCallback, useEffect, useState } from 'react';
+
 import Loading from '@components/Loading';
 import { apiPok } from '@services/api';
+import { FIRST_ITEM_ON_ARRAY } from '@utils/constants';
 
 import { ContainerTab, RowTab, Type, Image, Value } from '../../styles';
 
@@ -23,7 +25,7 @@ interface EvolvesProps {
   evolves_to: EvolvesProps[];
 }
 
-const Evolution = ({ pokemon }: Props) => {
+const Evolution = ({ pokemon }: Props): JSX.Element => {
   const { name } = pokemon;
 
   const [pokemonsFamily, setPokemonsFamily] = useState<PokemonEvolvesProps[]>([]);
@@ -90,7 +92,7 @@ const Evolution = ({ pokemon }: Props) => {
           <RowTab key={`evolution-${evolves.number}`}>
             <Image source={{ uri: evolves.image }} />
             <Type>{evolves.name}</Type>
-            {index !== 0 && <Value>{`Level: ${evolves.level}`}</Value>}
+            {index !== FIRST_ITEM_ON_ARRAY && <Value>{`Level: ${evolves.level}`}</Value>}
           </RowTab>
         ))
       ) : (

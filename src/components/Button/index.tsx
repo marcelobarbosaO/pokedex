@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Btn } from './styles';
 
-const Button = props => {
+const Button = (props): JSX.Element => {
   const { children } = props;
 
   return (

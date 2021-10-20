@@ -8,11 +8,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from '@scenes/Home';
 import PokemonDetailScreen from '@scenes/PokemonDetail';
 import SignInScreen from '@scenes/SignIn';
+import { ROUTE_NAMES } from '@utils/constants';
 
 const Drawer = createDrawerNavigator();
 const SignStack = createNativeStackNavigator();
 
-const HomeStackScreen = () => (
+const HomeStackScreen = (): JSX.Element => (
   <Drawer.Navigator
     screenOptions={{
       headerShown: false,
@@ -23,15 +24,14 @@ const HomeStackScreen = () => (
       },
     }}
     drawerContent={() => <FilterSideMenu />}>
-    <Drawer.Screen name="Home" component={HomeScreen} />
-    <Drawer.Screen name="PokemonDetail" component={PokemonDetailScreen} />
-    {/* <HomeStack.Screen name="SaleDetail" component={SaleDetailScreen} /> */}
+    <Drawer.Screen name={ROUTE_NAMES.HOME} component={HomeScreen} />
+    <Drawer.Screen name={ROUTE_NAMES.POKEMON_DETAIL} component={PokemonDetailScreen} />
   </Drawer.Navigator>
 );
 
-const AuthStackScreen = () => (
+const AuthStackScreen = (): JSX.Element => (
   <SignStack.Navigator screenOptions={{ headerShown: false }}>
-    <SignStack.Screen name="SignIn" component={SignInScreen} />
+    <SignStack.Screen name={ROUTE_NAMES.SIGN_IN} component={SignInScreen} />
   </SignStack.Navigator>
 );
 

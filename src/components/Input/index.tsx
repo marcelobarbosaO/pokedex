@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 
 import { InputContainer, InputField, Button, Icon } from './styles';
 
-const Input = props => {
+const Input = (props): JSX.Element => {
   const { isPassword } = props;
   const [visible, setVisible] = useState<boolean>(false);
 
-  const renderIcon = () => {
+  const renderIcon = (): JSX.Element => {
     const name = visible ? 'eye-off' : 'eye';
 
-    const changeType = () => {
+    const changeType = (): void => {
       setVisible(prevState => !prevState);
     };
 
     return (
-      <Button onPress={() => changeType()}>
+      <Button onPress={changeType}>
         <Icon name={name} size={30} />
       </Button>
     );

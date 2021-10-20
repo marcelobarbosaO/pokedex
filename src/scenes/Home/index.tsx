@@ -1,10 +1,12 @@
 /* eslint-disable prettier/prettier */
 import React, { useEffect, useState } from 'react';
+import _ from 'lodash';
 
 import { useSelector } from 'react-redux';
 import InputSearch from '@components/InputSearch';
 import Loading from '@components/Loading';
 import { apiPok } from '@services/api';
+import { DEFAULT_FILTER, NUMBER_OF_POKEMONS, MIN_LETTER_FOR_SEARCH } from '@utils/constants';
 import CardPokemon from './components/CardPokemon';
 import Tag from './components/Tag';
 
@@ -22,32 +24,30 @@ import {
 
 const logo = require('@assets/logo.png');
 
-const NUMBER_OF_POKEMONS = 20;
-
 const Home = (props): JSX.Element => {
   const { navigation } = props;
 
-  const [offset, setOffset] = useState(0);
-  const [loading, setLoading] = useState(true);
-  const [loadingMore, setLoadingMore] = useState(false);
-  const [searchText, setSearchText] = useState('');
+  const [offset, setOffset] = useState<number>(0);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [loadingMore, setLoadingMore] = useState<boolean>(false);
+  const [searchText, setSearchText] = useState<string>('');
   const [allPokemons, setAllPokemons] = useState<PokemonProps[]>([]);
   const [filteredPokemons, setFilteredPokemons] = useState<PokemonProps[]>([]);
 
   const { filters } = useSelector((state: { app: AppState }) => state.app);
 
-  const toggleMenu = () => {
+  const toggleMenu = (): void => {
     navigation.openDrawer();
   };
 
-  const fetchPokemonData = async (pokemonData: NameUrl, checkFilter: boolean) => {
-    const pokemonId = pokemonData.url.split('pokemon/').pop();
+  const fetchPokemonData = async (pokemonData: NameUrl, checkFilter: boolean): Promise<void> => {
+    const pokemonId: string | undefined = pokemonData.url.split('pokemon/').pop();
     const { data } = await apiPok.get<Pokemon>(`/pokemon/${pokemonId}`);
 
     if (data) {
       const { name, types, sprites } = data;
 
-      let backgroundColor = types[0].type.name;
+      let backgroundColor: string = types[0].type.name;
 
       if (backgroundColor === 'normal' && types.length > 1) {
         backgroundColor = types[1].type.name;
@@ -62,10 +62,11 @@ const Home = (props): JSX.Element => {
       setAllPokemons(prevState => [...prevState, newPokemon]);
 
       if (checkFilter) {
-        if (searchText.length > 3 && !name.includes(searchText)) return;
+        if (searchText.length > MIN_LETTER_FOR_SEARCH && !name.includes(searchText)) return;
 
-        if (!filters.includes('all')) {
-          const existInFilter = types.some((type: TypePokemon) => filters.includes(type.type.name));
+        if (!filters.includes(DEFAULT_FILTER)) {
+          const existInFilter: boolean = types.some((type: TypePokemon) =>
+            filters.includes(type.type.name));
 
           if (!existInFilter) return;
         }
@@ -77,35 +78,33 @@ const Home = (props): JSX.Element => {
     }
   };
 
-  const filterPokemons = () => {
-    if (filters.length === 1 && filters[0] === 'all') {
-      return setFilteredPokemons(allPokemons);
-    }
+  const filterPokemons = (): void => {
+    if (filters.includes(DEFAULT_FILTER)) return setFilteredPokemons(allPokemons);
 
-    const allFilteredPokemons = allPokemons.filter(pokemon =>
+    const allFilteredPokemons: PokemonProps[] = allPokemons.filter(pokemon =>
       pokemon.types.some((type: TypePokemon) => filters.includes(type.type.name)));
 
-    const orderedPokemons = allFilteredPokemons.sort((pokemonA, pokemonB) =>
+    const orderedPokemons: PokemonProps[] = allFilteredPokemons.sort((pokemonA, pokemonB) =>
       pokemonA.name > pokemonB.name ? 1 : -1);
 
     setFilteredPokemons(orderedPokemons);
   };
 
-  const handleSearch = () => {
-    if (searchText.length === 0) return filterPokemons();
+  const handleSearch = (): void => {
+    if (_.isEmpty(searchText)) return filterPokemons();
 
-    if (searchText.length > 3) {
-      const pokemonsFilteredByName = filteredPokemons.filter(pokemon =>
+    if (searchText.length > MIN_LETTER_FOR_SEARCH) {
+      const pokemonsFilteredByName: PokemonProps[] = filteredPokemons.filter(pokemon =>
         pokemon.name.includes(searchText));
 
-      const orderedPokemons = pokemonsFilteredByName.sort((pokemonA, pokemonB) =>
+      const orderedPokemons: PokemonProps[] = pokemonsFilteredByName.sort((pokemonA, pokemonB) =>
         pokemonA.name > pokemonB.name ? 1 : -1);
 
       setFilteredPokemons(orderedPokemons);
     }
   };
 
-  const fetchPokemons = async ({ offsetNumber, checkFilter = false }) => {
+  const fetchPokemons = async ({ offsetNumber, checkFilter = false }): Promise<void> => {
     const { data } = await apiPok.get<List>(
       `/pokemon?limit=${NUMBER_OF_POKEMONS}&offset=${offsetNumber}`,
     );
@@ -121,14 +120,14 @@ const Home = (props): JSX.Element => {
     }
   };
 
-  const renderFooter = () => {
+  const renderFooter = (): JSX.Element | null => {
     if (!loadingMore) return null;
 
     return <Loading />;
   };
 
-  const loadMoreItems = () => {
-    if (searchText.length > 3) return;
+  const loadMoreItems = (): void => {
+    if (searchText.length > MIN_LETTER_FOR_SEARCH) return;
 
     const newOffset = offset + NUMBER_OF_POKEMONS;
 

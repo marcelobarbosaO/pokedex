@@ -34,9 +34,9 @@ const PokemonDetail = (props): JSX.Element => {
   } = props;
 
   const layout = useWindowDimensions();
-  const colors = [theme.backgroundType[pokemon.backgroundColor], '#000'];
+  const colors: string[] = [theme.backgroundType[pokemon.backgroundColor], '#000'];
 
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState<number>(0);
   const [routes] = useState([
     { key: 'about', title: 'About' },
     { key: 'status', title: 'Stats' },
@@ -49,7 +49,7 @@ const PokemonDetail = (props): JSX.Element => {
     evolution: () => <Evolution pokemon={pokemon} />,
   });
 
-  const renderTabBar = tabProps => (
+  const renderTabBar = (tabProps): JSX.Element => (
     <TabBar
       {...tabProps}
       indicatorStyle={{ backgroundColor: theme.colors.notification }}

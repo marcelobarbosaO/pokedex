@@ -49,7 +49,7 @@ const SignIn = (): JSX.Element => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = async data => {
+  const onSubmit = async (data): Promise<void> => {
     if (!isLoading) {
       const { email, password } = data;
 

@@ -9,32 +9,23 @@ type Props = {
 const Status = ({ pokemon }: Props) => {
   const { stats } = pokemon;
 
+  const Stats = [
+    { name: 'HP', index: 0 },
+    { name: 'Attack', index: 1 },
+    { name: 'Defense', index: 2 },
+    { name: 'Special Attack', index: 3 },
+    { name: 'Special Defense', index: 4 },
+    { name: 'Speed', index: 5 },
+  ];
+
   return (
     <ContainerTab>
-      <RowTab>
-        <Type>HP</Type>
-        <Value>{stats[0].base_stat}</Value>
-      </RowTab>
-      <RowTab>
-        <Type>Attack</Type>
-        <Value>{stats[1].base_stat}</Value>
-      </RowTab>
-      <RowTab>
-        <Type>Defense</Type>
-        <Value>{stats[2].base_stat}</Value>
-      </RowTab>
-      <RowTab>
-        <Type>Special Attack</Type>
-        <Value>{stats[3].base_stat}</Value>
-      </RowTab>
-      <RowTab>
-        <Type>Special Defense</Type>
-        <Value>{stats[4].base_stat}</Value>
-      </RowTab>
-      <RowTab>
-        <Type>Speed</Type>
-        <Value>{stats[5].base_stat}</Value>
-      </RowTab>
+      {Stats.map(stat => (
+        <RowTab key={`stat-${stat.index}`}>
+          <Type>{stat.name}</Type>
+          <Value>{stats[stat.index].base_stat}</Value>
+        </RowTab>
+      ))}
     </ContainerTab>
   );
 };

@@ -11,7 +11,7 @@ type CardProps = {
 };
 
 const CardPokemon = ({ pokemon, index, navigation }: CardProps): JSX.Element | null => {
-  const colors = [theme.backgroundType[pokemon.backgroundColor], '#000'];
+  const colors: string[] = [theme.backgroundType[pokemon.backgroundColor], '#000'];
 
   return (
     <Container onPress={() => navigation.navigate('PokemonDetail', { pokemon })} index={index}>

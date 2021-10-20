@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { DEFAULT_FILTER } from '@utils/constants';
 
 const INITIAL_STATE: AppState = {
-  filters: ['all'],
+  filters: [DEFAULT_FILTER],
 };
 
 const appSlice = createSlice({

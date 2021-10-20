@@ -1,12 +1,14 @@
 import React from 'react';
 
+import { NUMBER_TO_CALCULATE_SIZE } from '@utils/constants';
+
 import { ContainerTab, RowTab, Type, Value } from '../../styles';
 
 type Props = {
   pokemon: PokemonProps;
 };
 
-const About = ({ pokemon }: Props) => (
+const About = ({ pokemon }: Props): JSX.Element => (
   <ContainerTab>
     <RowTab>
       <Type>Specie</Type>
@@ -14,11 +16,11 @@ const About = ({ pokemon }: Props) => (
     </RowTab>
     <RowTab>
       <Type>Height</Type>
-      <Value>{`${pokemon.height / 10} m`}</Value>
+      <Value>{`${pokemon.height / NUMBER_TO_CALCULATE_SIZE} m`}</Value>
     </RowTab>
     <RowTab>
       <Type>Weight</Type>
-      <Value>{`${pokemon.weight / 10} KG`}</Value>
+      <Value>{`${pokemon.weight / NUMBER_TO_CALCULATE_SIZE} KG`}</Value>
     </RowTab>
     <RowTab>
       <Type>Habilities</Type>
