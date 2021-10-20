@@ -67,7 +67,8 @@ const PokemonDetail = (props): JSX.Element => {
             paddingHorizontal: 10,
             textTransform: 'capitalize',
             fontWeight: focused ? 'bold' : 'normal',
-          }}>
+          }}
+        >
           {route.title}
         </Text>
       )}

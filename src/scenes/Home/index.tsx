@@ -66,7 +66,8 @@ const Home = (props): JSX.Element => {
 
         if (!filters.includes(DEFAULT_FILTER)) {
           const existInFilter: boolean = types.some((type: TypePokemon) =>
-            filters.includes(type.type.name));
+            filters.includes(type.type.name),
+          );
 
           if (!existInFilter) return;
         }
@@ -82,10 +83,12 @@ const Home = (props): JSX.Element => {
     if (filters.includes(DEFAULT_FILTER)) return setFilteredPokemons(allPokemons);
 
     const allFilteredPokemons: PokemonProps[] = allPokemons.filter(pokemon =>
-      pokemon.types.some((type: TypePokemon) => filters.includes(type.type.name)));
+      pokemon.types.some((type: TypePokemon) => filters.includes(type.type.name)),
+    );
 
     const orderedPokemons: PokemonProps[] = allFilteredPokemons.sort((pokemonA, pokemonB) =>
-      pokemonA.name > pokemonB.name ? 1 : -1);
+      pokemonA.name > pokemonB.name ? 1 : -1,
+    );
 
     setFilteredPokemons(orderedPokemons);
   };
@@ -95,10 +98,12 @@ const Home = (props): JSX.Element => {
 
     if (searchText.length > MIN_LETTER_FOR_SEARCH) {
       const pokemonsFilteredByName: PokemonProps[] = filteredPokemons.filter(pokemon =>
-        pokemon.name.includes(searchText));
+        pokemon.name.includes(searchText),
+      );
 
       const orderedPokemons: PokemonProps[] = pokemonsFilteredByName.sort((pokemonA, pokemonB) =>
-        pokemonA.name > pokemonB.name ? 1 : -1);
+        pokemonA.name > pokemonB.name ? 1 : -1,
+      );
 
       setFilteredPokemons(orderedPokemons);
     }
