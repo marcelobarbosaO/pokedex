@@ -23,8 +23,7 @@ const HomeStackScreen = (): JSX.Element => (
         width: '85%',
       },
     }}
-    drawerContent={() => <FilterSideMenu />}
-  >
+    drawerContent={() => <FilterSideMenu />}>
     <Drawer.Screen name={ROUTE_NAMES.HOME} component={HomeScreen} />
     <Drawer.Screen name={ROUTE_NAMES.POKEMON_DETAIL} component={PokemonDetailScreen} />
   </Drawer.Navigator>
