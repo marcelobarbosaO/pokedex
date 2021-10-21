@@ -15,9 +15,7 @@ Aplicativo para listagem, filtro e busca de pokemons utilizando React Native.
 Todo o consumo de api foi possível utilizando a [PokéApi](https://pokeapi.co/).
 
 ## Preview
-|IOS|ANDROID|
-|:-------------:|:-------------:|
-|<video src=".github/ios.mp4" width="200px"></video>||
+https://user-images.githubusercontent.com/9268156/138319752-4178e06c-561d-4443-9af0-d50062a13d83.mp4
 
 
 ### Funcionalidades
