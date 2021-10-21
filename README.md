@@ -17,6 +17,8 @@ Todo o consumo de api foi possível utilizando a [PokéApi](https://pokeapi.co/)
 
 ### Funcionalidades
 
+- [x] **Autenticação de Usuário**: Logar usuário usando api back end para teste [ReqRes](https://reqres.in/)
+
 - [x] **Listagem dos pokémons**: Listar os pokémons com o uso da API REST.
 
 - [x] **Scroll infito**: Aumentar a listagem de pokemons ao rolar a tela até o fim.
@@ -26,6 +28,8 @@ Todo o consumo de api foi possível utilizando a [PokéApi](https://pokeapi.co/)
 - [x] **Detalhe do pokémon**: Página com detalhes do pokemon.
 
 ### Conceitos abordados
+
+- Utilizado uma api de back end de teste para autenticar usuário e manter logado via redux-persist com sagas e redux-toolkit
 
 - FlexBox com Styled-Components para montagem do layout.
 
@@ -80,4 +84,10 @@ $ yarn start
 # Instalação dos pods
 $ cd ios && pod install && cd ..
 
+```
+
+```bash
+  # Na tela de login use essas credencias para login com sucesso.
+  email = eve.holt@reqres.in
+  password = cityslicka
 ```
