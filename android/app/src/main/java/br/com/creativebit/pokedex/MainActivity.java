@@ -1,4 +1,4 @@
-package com.pokedex;
+package br.com.creativebit.pokedex;
 
 import com.facebook.react.ReactActivity;
 

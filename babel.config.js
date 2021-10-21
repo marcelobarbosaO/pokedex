@@ -22,6 +22,7 @@ module.exports = {
           '@utils': ['src/utils/*'],
         },
       },
+      'react-native-reanimated/plugin',
     ],
   ],
 };
