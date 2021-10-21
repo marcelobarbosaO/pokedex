@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "npx solidarity && npx react-native run-android",
+    "android": "npx solidarity && cd android && ./gradlew clean && cd .. && npx react-native run-android",
     "ios": "npx solidarity && npx react-native run-ios",
     "start": "npx solidarity && npx react-native start --reset-cache",
     "test": "jest --no-cache --passWithNoTests",
